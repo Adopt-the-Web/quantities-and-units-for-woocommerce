@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Easily require your customers to buy a minimum / maximum / incremental amount of products. Supports decimal quantities.
 
+== FORK DESCRIPTION ==
+Updated deprecated functions to support PHP 7.4, WC 3.8.1, WP 5.3.2 by Mark Praschan.
+
 == Description ==
 NOTE: This plugin has been forked from the "Advanced Product Quantities" plugin. It adds decimal quantities support and 
 units to products. Please don't attempt to run both plugins simultaneously. It not needed and the universe will 

@@ -1,11 +1,9 @@
 <?php
 /*
 Plugin Name: Quantities and Units for WooCommerce
-Plugin URI: https://wordpress.org/plugins/quantities-and-units-for-woocommerce/
-Description: Easily require your customers to buy a minimum / maximum / incremental amount of products to continue with their checkout.
-Version: 1.0.13
-Author: Nicholas Verwymeren
-Author URI: https://www.nickv.codes
+Description: Easily require your customers to buy a minimum / maximum / incremental amount of products to continue with their checkout. Updated to support PHP 7.4, WC 3.8.1, WP 5.3.2 by Mark Praschan. Original plugin by Nicholas Verwymeren.
+Version: 1.1
+Author: Nicholas Verwymeren / Mark Praschan
 */ 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -196,10 +194,10 @@ class WC_Quantities_and_Units {
 			if ( ! is_cart() ) {
 				
 				// Get the product
-				$pro = get_product( $post );
+				$pro = wc_get_product( $post );
 				
 				// Check if variable
-				if ( $pro->product_type == 'variable' ) {
+				if ( $pro->get_type() == 'variable' ) {
 
 					// See what rules are being applied
 					$rule_result = wcqu_get_applied_rule( $pro );
@@ -257,7 +255,8 @@ class WC_Quantities_and_Units {
 			wp_enqueue_script( 
 				'wcqu_admin_script', 
 				plugins_url( '/assets/js/ipq_admin_script.js', __FILE__ ),
-				array( 'jquery' )
+				array( 'jquery' ),
+				'6.6.4'
 			);
 		}
 	}

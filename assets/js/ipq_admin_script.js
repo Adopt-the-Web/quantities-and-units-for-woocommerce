@@ -1,5 +1,8 @@
 jQuery(document).ready( function($) {
-	
+    $('.button').click(function(){
+	    $('#order_line_items > tr > td.quantity > div.edit > input').attr('step','0.01');
+    });
+    
 	$('span.active-toggle a').click( function() {
 		
 		$('div.rule-meta').toggle();
